@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spring Flowers School - Student Management</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+
+    /* Header */
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    header img {
+      height: 50px;
+      width: 50px;
+      object-fit: contain;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a, nav button {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      text-align: center;
+      background: none;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    nav a:hover, nav button:hover {
+      background-color: #575757;
+    }
+
+    /* Main Content */
+    main {
+      text-align: center;
+      padding: 30px;
+    }
+
+    section {
+      display: none;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 70%;
+      margin: 20px auto;
+    }
+
+    #home { display: block; }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <!-- ✅ Using a stable flower logo URL -->
+    <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png">
+    <h1>Spring Flowers School</h1>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#" onclick="showPage('home')">Home</a>
+    <a href="#" onclick="showPage('about')">About</a>
+    <a href="#" onclick="login()">Student Profile</a>
+    <a href="#" onclick="showPage('contact')">Contact</a>
+    <button id="logoutBtn" style="display:none;" onclick="logout()">Logout</button>
+  </nav>
+
+  <!-- Main -->
+  <main>
+    <section id="home">
+      <h2>Welcome to Spring Flowers School!</h2>
+      <p>We nurture young minds to learn, grow, and blossom into bright futures 🌸</p>
+    </section>
+
+    <section id="about">
+      <h2>About Our School</h2>
+      <p>Spring Flowers School provides quality education and encourages creativity, leadership, and compassion among students.</p>
+    </section>
+
+    <section id="profile">
+      <h2>🎓 Student Profile</h2>
+      <p><strong>Name:</strong> Gowtham</p>
+      <p><strong>Class:</strong> 3rd Year - Computer Science and Engineering</p>
+      <p><strong>Roll No:</strong> CSE2025-101</p>
+      <p><strong>Email:</strong> gowtham@example.com</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p><strong>Email:</strong> info@springflowers.edu</p>
+      <p><strong>Phone:</strong> +91 98765 43210</p>
+      <p><strong>Address:</strong> 123, Bloom Street, Chennai, India</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Spring Flowers School | All Rights Reserved</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    function showPage(pageId) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => section.style.display = 'none');
+      document.getElementById(pageId).style.display = 'block';
+    }
+
+    function login() {
+      alert("Login successful!");
+      document.getElementById('logoutBtn').style.display = 'inline';
+      showPage('profile');
+    }
+
+    function logout() {
+      alert("You have logged out successfully.");
+      document.getElementById('logoutBtn').style.display = 'none';
+      showPage('home');
+    }
+  </script>
+
+</body>
+</html>
